@@ -1,0 +1,12 @@
+$breakpoints: (
+    mobile: calc(375 / 16)em,
+    desktop: calc(1440 / 16)em
+);
+
+@mixin mq($key) {
+    $size: map.get($breakpoints, $key);
+
+    @media (min-width: $size) {
+        @content;
+    }
+}
